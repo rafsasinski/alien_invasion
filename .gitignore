@@ -1,0 +1,7 @@
+__pycache__/
+.idea/
+
+# Vim swap/backup files
+*.swp
+*.swo
+*~
