@@ -26,13 +26,8 @@ class AlienInvasion:
         """Start the main loop for th egame."""
         while True:
             self._check_events()
+            self._update_screen()
             
-            # Redraw the screen during each pass through the loop.
-            self.screen.fill(self.settings.bg_color)
-            self.ship.blitme()
-
-            # Make the most recently drawn screen visible.
-            pygame.display.flip()
 
 
     def _check_events(self):
@@ -41,6 +36,20 @@ class AlienInvasion:
             print(f"{event.type}\t{event}")
             if event.type == pygame.QUIT:
                 sys.exit()
+
+
+    def _update_screen(self):
+        """Update images on the screen, and flip to the new screen."""
+
+        # Fill the scene with color
+        self.screen.fill(self.settings.bg_color)
+
+        # Blit the ship object to the scene
+        self.ship.blitme()
+
+        # Make the most recently drawn screen visible.
+        pygame.display.flip()
+
 
 
 
